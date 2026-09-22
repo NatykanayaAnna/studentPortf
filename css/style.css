@@ -23,3 +23,83 @@
     --container: 75rem;
     --transition: 0.3s ease;
 }
+/* Основні стилі */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-main);
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+
+
+a {
+    color: var(--primary-dark);
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+a:active {
+    transform: translateY(1px);
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
+    line-height: 1.2;
+}
+
+h1 {
+    margin: var(--space-xl) 0;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: var(--space-large);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+p {
+    max-width: 70ch;
+}
+
+
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 1rem;
+    z-index: 1000;
+    padding: var(--space-small) var(--space-medium);
+    background: var(--primary-dark);
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+

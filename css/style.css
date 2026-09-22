@@ -715,3 +715,106 @@ main > h1 {
 }
 
 
+/* 768 */
+
+@media (min-width: 48rem) {
+
+    main {
+        width: calc(100% - 4rem);
+    }
+
+    .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-medium) 2rem;
+    }
+
+    .site-header__logo {
+        margin: 0;
+    }
+
+    .site-nav__list {
+        justify-content: flex-end;
+    }
+
+
+    .section-about__photo {
+        height: 35rem;
+    }
+
+    .section-about__desc {
+        text-align: left;
+    }
+
+
+    .section-education {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-education > h2 {
+        grid-column: 1 / -1;
+    }
+
+
+    .section-subjects__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .section-skills {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-skills > h2 {
+        grid-column: 1 / -1;
+    }
+
+
+    .section-travel__gallery {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .section-travel__item:first-child {
+        grid-row: span 2;
+    }
+
+
+    .section-projects__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .section-facts__list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* 1200 */
+
+@media (min-width: 75rem) {
+
+    body {
+        font-size: 1.125rem;
+    }
+
+    .section-about__photo {
+        height: 42rem;
+    }
+
+
+    .section-hobbies__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    .section-facts__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .section-goals__list {
+        grid-template-columns: 1fr 1fr;
+    }
+}

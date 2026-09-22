@@ -1,0 +1,25 @@
+
+:root {
+    --bg: #f8f5ff;
+    --card: #ffffff;
+    --text: #29252e;
+    --light-text: #6f6878;
+    --primary: #8b6fb3;
+    --primary-dark: #624887;
+    --accent: #d9c7ef;
+    --border: #e2d9eb;
+
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 2rem;
+    --space-xl: 3rem;
+
+    --radius: 1rem;
+    --shadow: 0 0.25rem 1rem rgba(98, 72, 135, 0.12);
+
+    --font-main: Arial, sans-serif;
+    --font-title: Georgia, serif;
+
+    --container: 75rem;
+    --transition: 0.3s ease;
+}

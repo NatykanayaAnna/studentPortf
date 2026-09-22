@@ -103,3 +103,580 @@ p {
     top: 1rem;
 }
 
+/* хедер */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--space-medium);
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.site-header__logo {
+    display: block;
+    margin-bottom: var(--space-medium);
+    color: var(--primary-dark);
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.site-header__logo::after {
+    display: block;
+    width: 2rem;
+    height: 2px;
+    margin: 0.25rem auto 0;
+    background: var(--primary);
+    content: "";
+}
+
+/* навігація */
+.site-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-small);
+}
+
+.site-nav__list a {
+    display: block;
+    padding: var(--space-small);
+    border-radius: 0.5rem;
+}
+
+.site-nav__list a:hover {
+    background: var(--accent);
+}
+
+
+/* меін */
+main {
+    width: calc(100% - 2rem);
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.section {
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 6rem;
+}
+
+.section h2::after {
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin-top: var(--space-small);
+    background: var(--primary);
+    content: "";
+}
+
+/* про мене красіву */
+.section-about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-large);
+}
+
+.section-about__picture {
+    width: 100%;
+}
+
+.section-about__photo {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-about__desc {
+    text-align: center;
+}
+
+.section-about__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-small);
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-style: normal;
+}
+
+.section-about__contacts a {
+    padding: var(--space-small);
+}
+
+
+/* освіта */
+
+.section-education {
+    display: grid;
+    gap: var(--space-large);
+}
+
+.section-education__school,
+.section-education__university {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-education__figure {
+    margin: 0 0 var(--space-medium);
+}
+
+.section-education__school-photo,
+.section-education__uni-photo {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+figcaption {
+    padding: var(--space-small);
+    color: var(--light-text);
+    text-align: center;
+}
+
+/* улюблені предмети */
+
+.section-subjects__list {
+    display: grid;
+    gap: var(--space-medium);
+}
+
+.section-subjects__list li {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-subjects__list li::before {
+    content: "✦";
+    margin-right: var(--space-small);
+    color: var(--primary);
+}
+
+
+/* навички */
+
+.section-skills {
+    display: grid;
+    gap: var(--space-large);
+}
+
+.section-skills__bar {
+  display: inline-block;
+  width: 6rem;
+  height: 0.6rem;
+  background: var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-skills__bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: var(--level, 0%);
+  background: var(--primary);
+  border-radius: 1rem;
+}
+
+.section-skills__group {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-skills__list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-medium);
+    padding-bottom: var(--space-small);
+    border-bottom: 2px solid var(--accent);
+}
+
+.section-skills__level {
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+
+/* шо мені нрав */
+
+.section-hobbies__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-medium);
+}
+
+.section-hobbies__card {
+    padding: var(--space-large);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
+}
+
+.section-hobbies__card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* booksss */
+
+.section-books__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: var(--space-large);
+}
+
+.section-books__card {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
+}
+
+.section-books__card:hover {
+    transform: translateY(-5px);
+}
+
+.section-books__card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+
+/* musicc */
+
+.section-music__list {
+    display: grid;
+    gap: var(--space-small);
+}
+
+.section-music__list li {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+
+/* фільми */
+
+.section-movies__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: var(--space-large);
+}
+
+.section-movies__card {
+    overflow: hidden;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-movies__card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.section-movies__card figcaption {
+    padding: var(--space-medium);
+}
+
+
+/* активність */
+
+.section-activity {
+    display: grid;
+    gap: var(--space-medium);
+}
+
+.section-activity__item {
+    padding: var(--space-large);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-activity__item:nth-child(odd) {
+    border-left: 4px solid var(--primary);
+}
+
+
+/* travel */
+
+.section-travel__gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-small);
+}
+
+.section-travel__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.section-travel__item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.section-travel__item:hover img {
+    transform: scale(1.05);
+}
+
+.section-travel__item figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+/* proj */
+
+.section-projects__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-large);
+}
+
+.section-projects__card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-large);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-projects__card a {
+    align-self: flex-start;
+    margin-top: var(--space-medium);
+    padding: var(--space-small) var(--space-medium);
+    background: var(--primary);
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.section-projects__card a:hover {
+    background: var(--primary-dark);
+}
+
+
+/* цілі */
+
+.section-goals__list {
+    display: grid;
+    gap: var(--space-medium);
+    padding-left: 2rem;
+}
+
+.section-goals__list li {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+}
+
+
+/* факти */
+
+.section-facts__list {
+    display: grid;
+    gap: var(--space-small);
+}
+
+.section-facts__list li {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-facts__list li::before {
+    content: "✿";
+    margin-right: var(--space-small);
+    color: var(--primary);
+}
+
+
+/* q */
+
+.section-quotes {
+    display: grid;
+    gap: var(--space-large);
+}
+
+.section-quotes__quote {
+    padding: var(--space-large);
+    background: var(--card);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: var(--shadow);
+}
+
+.section-quotes__quote::before {
+    content: "“";
+    color: var(--accent);
+    font-size: 4rem;
+}
+
+.section-quotes__quote cite {
+    color: var(--primary-dark);
+}
+
+
+/* щось там */
+
+.section-extra {
+    display: grid;
+    gap: var(--space-medium);
+}
+
+.section-extra__details {
+    padding: var(--space-medium);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-extra__details summary {
+    cursor: pointer;
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+
+/* прорітети */
+
+.section-schedule {
+    overflow-x: auto;
+}
+
+.section-schedule__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+}
+
+.section-schedule__table caption {
+    margin-bottom: var(--space-medium);
+    font-weight: bold;
+}
+
+.section-schedule__table th,
+.section-schedule__table td {
+    padding: var(--space-small);
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+.section-schedule__table th {
+    background: var(--accent);
+}
+
+.section-schedule__table tr:nth-child(even) {
+    background: var(--bg);
+}
+
+
+/* форма */
+
+.section-contacts__form {
+    display: grid;
+    gap: var(--space-medium);
+    max-width: 60ch;
+    padding: var(--space-large);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-contacts__form label {
+    font-weight: bold;
+}
+
+.section-contacts__form input,
+.section-contacts__form select,
+.section-contacts__form textarea {
+    width: 100%;
+    margin-top: var(--space-small);
+    padding: var(--space-small);
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+}
+
+.section-contacts__form textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.section-contacts__consent {
+    display: flex;
+    gap: var(--space-small);
+}
+
+.section-contacts__consent input {
+    width: auto;
+    margin-top: 0;
+}
+
+.section-contacts__button {
+    padding: var(--space-medium);
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.section-contacts__button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* фут */
+
+.site-footer {
+    padding: var(--space-xl) var(--space-medium);
+    background: var(--card);
+    text-align: center;
+}
+
+.site-footer__social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-medium);
+    margin: var(--space-medium) 0;
+}
+
+

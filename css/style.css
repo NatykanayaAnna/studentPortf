@@ -680,3 +680,38 @@ figcaption {
 }
 
 
+/* анімка */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main > h1 {
+    animation: appear 0.7s ease;
+}
+
+
+/* темна тема */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1d1922;
+        --card: #29232f;
+        --text: #f3eef7;
+        --light-text: #c3b9ca;
+        --primary: #c5a8e8;
+        --primary-dark: #dbc5f4;
+        --accent: #4b3b5c;
+        --border: #493d52;
+    }
+}
+
+

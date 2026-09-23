@@ -131,11 +131,96 @@ h3 {
 }
 
 /* навігація */
-.site-nav__list {
+
+/* Візуально приховуємо чекбокс, але залишаємо для фокусу з клавіатури */
+.site-nav__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Кнопка "Меню" на мобільному */
+.site-nav__toggle {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     gap: var(--space-small);
+    width: fit-content;
+    margin: 0 auto;
+    padding: var(--space-small) var(--space-medium);
+    color: var(--primary-dark);
+    font-weight: bold;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.site-nav__toggle:hover {
+    background: var(--accent);
+}
+
+/* Доступність: фокус клавіатурою (Tab) */
+.site-nav__checkbox:focus-visible ~ .site-nav__toggle {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Графічні смужки бургера */
+.site-nav__burger-icon {
+    position: relative;
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    background: var(--primary-dark);
+    transition: var(--transition);
+}
+
+.site-nav__burger-icon::before,
+.site-nav__burger-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-dark);
+    transition: var(--transition);
+}
+
+.site-nav__burger-icon::before { top: -6px; }
+.site-nav__burger-icon::after  { top: 6px; }
+
+/* Анімація бургера в хрестик при відкритті */
+.site-nav__checkbox:checked ~ .site-nav__toggle .site-nav__burger-icon {
+    background: transparent;
+}
+.site-nav__checkbox:checked ~ .site-nav__toggle .site-nav__burger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.site-nav__checkbox:checked ~ .site-nav__toggle .site-nav__burger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Список посилань: за замовчуванням схований на мобільному */
+.site-nav__list {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-small);
+    margin-top: var(--space-medium);
+    text-align: center;
+}
+
+/* Відкриття списку при активному чекбоксі */
+.site-nav__checkbox:checked ~ .site-nav__list {
+    display: flex;
 }
 
 .site-nav__list a {
@@ -716,14 +801,17 @@ main > h1 {
 
 @media (min-width: 48rem) {
 
+
     main {
         width: calc(100% - 4rem);
     }
 
+    /* На планшеті: логотип зверху по центру, меню горизонтально під ним */
     .site-header {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        gap: var(--space-small);
         padding: var(--space-medium) 2rem;
     }
 
@@ -731,9 +819,20 @@ main > h1 {
         margin: 0;
     }
 
-    .site-nav__list {
-        justify-content: flex-end;
+    /* Ховаємо кнопку бургера на планшеті */
+    .site-nav__toggle {
+        display: none;
     }
+
+    /* Меню завжди видиме горизонтальним рядом */
+    .site-nav__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    /* ... далі залишаються твої інші стилі секцій планшета ... */
 
 
     .section-about__photo {
@@ -795,7 +894,14 @@ main > h1 {
     body {
         font-size: 1.125rem;
     }
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
+    .site-nav__list {
+        justify-content: flex-end;
+    }
     .section-about__photo {
         height: 42rem;
     }

@@ -18,6 +18,16 @@
   <header class="site-header">
     <a class="site-header__logo" href="#main">Натикана Анна</a>
     <nav class="site-nav" aria-label="Основна навігація">
+      <!-- Прихований чекбокс-перемикач -->
+      <input type="checkbox" id="nav-toggle" class="site-nav__checkbox" aria-label="Відкрити меню навігації">
+      
+      <!-- Кнопка-бургер (клік по label перемикає чекбокс) -->
+      <label for="nav-toggle" class="site-nav__toggle">
+        <span class="site-nav__burger-icon" aria-hidden="true"></span>
+        <span class="site-nav__toggle-text">Меню</span>
+      </label>
+
+      <!-- Список посилань -->
       <ul class="site-nav__list">
         <li><a href="#about">Про мене</a></li>
         <li><a href="#education">Освіта</a></li>

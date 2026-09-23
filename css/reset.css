@@ -20,7 +20,7 @@ input, button, textarea, select { font: inherit;}
 
 p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 
-ul[class], ol[class] { list-style: none; padding: 0; }
+ul[class], ol[class], ul { list-style: none; padding: 0; }
 
 /* Базовий вигляд посилання */
 a {

@@ -832,9 +832,6 @@ main > h1 {
         margin-top: 0;
     }
 
-    /* ... далі залишаються твої інші стилі секцій планшета ... */
-
-
     .section-about__photo {
         height: 35rem;
     }
